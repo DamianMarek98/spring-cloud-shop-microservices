@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "03783bc7-b38b-4219-8a98-5b62781d6bf4",
+		"_postman_id": "bcc57824-d085-4cae-954a-c38e877a9e55",
 		"name": "Microservices",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "7044118"
@@ -38,6 +38,41 @@
 		{
 			"name": "get products",
 			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "clientSecret",
+							"value": "Vk0vElD8YFH2JDlcxeQ5noYcloNvutb4",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "spring-cloud-client",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "http://localhost:8181/realms/spring-boot-microservices-realm/protocol/openid-connect/token",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "token",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
@@ -58,6 +93,41 @@
 		{
 			"name": "create order",
 			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "clientSecret",
+							"value": "Vk0vElD8YFH2JDlcxeQ5noYcloNvutb4",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "spring-cloud-client",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "http://localhost:8181/realms/spring-boot-microservices-realm/protocol/openid-connect/token",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "token",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -70,12 +140,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/api/order",
+					"raw": "http://localhost:8080/api/order",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8081",
+					"port": "8080",
 					"path": [
 						"api",
 						"order"
@@ -87,15 +157,50 @@
 		{
 			"name": "get order",
 			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "clientSecret",
+							"value": "Vk0vElD8YFH2JDlcxeQ5noYcloNvutb4",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "spring-cloud-client",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "http://localhost:8181/realms/spring-boot-microservices-realm/protocol/openid-connect/token",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "token",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8081/api/order",
+					"raw": "http://localhost:8080/api/order",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8081",
+					"port": "8080",
 					"path": [
 						"api",
 						"order"
@@ -110,16 +215,41 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8082/api/inventory/pixel_4a_5g",
+					"raw": "http://localhost:8080/api/inventory?skuCode=pixel_4a_5g,pixel_6a",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8082",
+					"port": "8080",
 					"path": [
 						"api",
-						"inventory",
-						"pixel_4a_5g"
+						"inventory"
+					],
+					"query": [
+						{
+							"key": "skuCode",
+							"value": "pixel_4a_5g,pixel_6a"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actuators health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/actuator/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"actuator",
+						"health"
 					]
 				}
 			},
